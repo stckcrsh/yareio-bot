@@ -1,6 +1,6 @@
 /* Type definitions for the various objects you have access to in Yare. */
 
-declare const memory: Record<string, any> // You will probably want to change this
+declare const memory: Record<string, unknown> // You will probably want to change this
 
 declare type Position = [x: number, y: number]
 

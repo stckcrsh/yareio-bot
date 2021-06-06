@@ -8,7 +8,7 @@ First, you will need to install dependencies; to do that, install and run `yarn`
 
 To build the bot, run `yarn build`. The result will be stored in `dist/bot.js`.
 
-Source code is stored under `src`. The entry point for the bot is `src/index.ts`; in addition, the contents of `src/options.js` will be copied verbatim to the top of the final build file. TypeScript types are in `src/types`.
+Source code is stored under `src`. The entry point for the bot is `src/index.ts`; in addition, the contents of `src/options.js` will be copied verbatim to the top of the final build file. TypeScript types are in `typings`.
 
 You can run `eslint` with `yarn lint`, or even use ESLint's autofix feature with `yarn lint:fix`.
 

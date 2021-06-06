@@ -5,5 +5,5 @@
 		"allowJs": true
 	},
 	"extends": "@tsconfig/node12/tsconfig.json",
-	"typeRoots": ["./node_modules/@types", "./src/types"]
+	"typeRoots": ["./typings", "./node_modules/@types"]
 }
