@@ -15,7 +15,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js']
+		extensions: ['.tsx', '.ts', '.jsx', '.js']
 	},
 	output: {
 		publicPath: '/dist/',
@@ -30,7 +30,11 @@ module.exports = {
 			raw: true
 		}),
 		new ESLintPlugin({
-			extensions: ['.tsx', '.ts', '.js']
-		})
-	]
+			extensions: ['.tsx', '.ts', '.jsx', '.js']
+		}),
+		new webpack.NoEmitOnErrorsPlugin()
+	],
+	optimization: {
+		emitOnErrors: false
+	}
 };

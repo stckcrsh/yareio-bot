@@ -6,7 +6,7 @@ This is a template to create a bot for [yare.io](https://yare.io/), a programmin
 
 First, you will need to install dependencies; to do that, install and run `yarn`.
 
-To build the bot, run `yarn build`. The result will be stored in `dist/bot.js`.
+To build the bot, run `yarn build`. The result will be stored in `dist/bot.js`. Note that if there are any errors during linting or building, nothing is output (warnings don't prevent building).
 
 Source code is stored under `src`. The entry point for the bot is `src/index.ts`; in addition, the contents of `src/options.js` will be copied verbatim to the top of the final build file. TypeScript types are in `typings`.
 
@@ -15,7 +15,7 @@ You can run `eslint` with `yarn lint`, or even use ESLint's autofix feature with
 If you want to use [`yare-code-sync`](https://github.com/arikwex/yare-code-sync), you have two options:
 
 * `yarn serve` will serve `bot.js` with `yare-code-sync`.
-* `yarn watch` will watch your source files for changes, and then continuously rebuild a minified version of the bot to `bot.min.js`. It will also launch `yare-code-sync` to serve this file. But if there are any errors during the build step, `bot.min.js` won't be modified; only valid code gets sent to the server.
+* `yarn watch` will watch your source files for changes, and then continuously rebuild your bot. It will also launch `yare-code-sync` to serve this file. Once again, no files are modified on error, so only valid code is sent to your browser.
 
 To use `yare-code-sync`'s `RenderService`, place the following line at the top of your source file:
 
