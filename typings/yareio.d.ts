@@ -5,9 +5,11 @@ declare const memory: Record<string, unknown> // You will probably want to chang
 declare type Position = [x: number, y: number]
 
 declare interface Sight {
-	friends: string[]
-	enemies: string[]
-	structures: string[]
+	friends: `${string}${number}`[]
+	friends_beamable: `${string}${number}`[]
+	enemies: `${string}${number}`[]
+	enemies_beamable: `${string}${number}`[]
+	structures: `${string}${number}`[]
 }
 
 declare interface Entity {
@@ -21,15 +23,20 @@ declare interface ArtificialEntity extends Entity {
 	energy: number
 	hp: 0 | 1
 	sight: Sight
+
+	player_id: string
+	shape: "circles" | "squares" | "triangles"
+	color: string
 }
 
 declare interface Spirit extends ArtificialEntity {
 	id: `${string}${number}`
 
 	merged: `${string}${number}`[] | undefined
+	move_speed: number
 
 	move: (target: Position) => void
-	energize: (target: Spirit | Base) => void
+	energize: (target: ArtificialEntity) => void
 }
 
 declare interface Circle extends Spirit {
@@ -37,17 +44,23 @@ declare interface Circle extends Spirit {
 	divide: () => void
 
 	merged: `${string}${number}`[]
+	shape: "circles"
 }
 
 declare interface Square extends Spirit {
 	size: 10
 	energy_capacity: 100
+
+	shape: "squares"
+
 	jump: (target: Position) => void
 }
 
 declare interface Triangle extends Spirit {
 	size: 10
 	energy_capacity: 100
+
+	shape: "triangles"
 }
 
 declare interface Structure extends Entity {
@@ -58,20 +71,26 @@ declare interface Base extends Structure, ArtificialEntity {
 	id: `base_${string}`
 	structure_type: 'base'
 	size: 40
-	sight: Sight,
+	sight: Sight
 	current_spirit_cost: number
 }
 
 declare interface CircleBase extends Base {
 	energy_capacity: 200
+
+	shape: "circles"
 }
 
 declare interface SquareBase extends Base {
 	energy_capacity: 500
+
+	shape: "squares"
 }
 
 declare interface TriangleBase extends Base {
 	energy_capacity: 500
+
+	shape: "triangles"
 }
 
 declare interface Star extends Structure {
@@ -80,9 +99,21 @@ declare interface Star extends Structure {
 	position: Position
 }
 
-declare const spirits: Record<string, Spirit>
+declare interface Players {
+	p1: string
+	p2: string
+}
+
 declare const my_spirits: Spirit[]
+declare const spirits: Record<string, Spirit>
 declare const base: Base
 declare const enemy_base: Base
+declare const bases: Record<`base_${string}`, Base>
 declare const star_zxq: Star
 declare const star_a1c: Star
+declare const stars: Record<`star_${string}`, Star>
+
+declare const this_player_id: string
+declare const players: Players
+
+declare const CODE_VERSION: string
