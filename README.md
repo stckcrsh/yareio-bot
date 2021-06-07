@@ -17,7 +17,7 @@ If you want to use [`yare-code-sync`](https://github.com/arikwex/yare-code-sync)
 * `yarn serve` will serve `bot.js` with `yare-code-sync`.
 * `yarn watch` will watch your source files for changes, and then continuously rebuild a minified version of the bot to `bot.min.js`. It will also launch `yare-code-sync` to serve this file. But if there are any errors during the build step, `bot.min.js` won't be modified; only valid code gets sent to the server.
 
-To use `yare-code-server`'s `RenderService`, place the following line at the top of your source file:
+To use `yare-code-sync`'s `RenderService`, place the following line at the top of your source file:
 
 ```javascript
 import RenderService from '../yare-code-sync/client/RenderService';
