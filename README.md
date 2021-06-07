@@ -20,5 +20,5 @@ If you want to use [`yare-code-sync`](https://github.com/arikwex/yare-code-sync)
 To use `yare-code-sync`'s `RenderService`, place the following line at the top of your source file:
 
 ```javascript
-import RenderService from '../yare-code-sync/client/RenderService';
+import RenderService from 'yare-code-sync/client/RenderService';
 ```
