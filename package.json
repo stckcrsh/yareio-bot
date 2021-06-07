@@ -1,7 +1,7 @@
 {
-	"name": "yare",
+	"name": "yare-bot-template",
 	"version": "1.0.0",
-	"description": "Boom",
+	"description": "A template for Yare bots.",
 	"author": "Jules Bertholet",
 	"license": "MIT",
 	"main": "index.js",
