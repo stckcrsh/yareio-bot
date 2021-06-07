@@ -1,6 +1,6 @@
 # Yare.io Bot Template
 
-This is a template to create a bot for [yare.io](https://yare.io/), a programming game where you use Javascript to control your game units (called "spirits") and try to kill the enemy base. The template uses TypeScript and has Webpack set up to combine your source files into a nice output file.
+This is a template for creating bots for [yare.io](https://yare.io/), a programming game where you use Javascript to control your game units (called "spirits") and try to kill the enemy base. The template uses TypeScript and has Webpack set up to combine your source files into a nice output file.
 
 ## Development
 
