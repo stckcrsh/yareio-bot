@@ -34,9 +34,12 @@ declare interface Spirit extends ArtificialEntity {
 
 	merged: `${string}${number}`[] | undefined
 	move_speed: number
+	mark: string
 
 	move: (target: Position) => void
 	energize: (target: ArtificialEntity) => void
+	shout: (message: string) => void
+	set_mark: (label: string) => void
 }
 
 declare interface Circle extends Spirit {
