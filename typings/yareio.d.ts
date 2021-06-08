@@ -79,13 +79,13 @@ declare interface Base extends Structure, ArtificialEntity {
 }
 
 declare interface CircleBase extends Base {
-	energy_capacity: 200
+	energy_capacity: 400
 
 	shape: "circles"
 }
 
 declare interface SquareBase extends Base {
-	energy_capacity: 500
+	energy_capacity: 800
 
 	shape: "squares"
 }
