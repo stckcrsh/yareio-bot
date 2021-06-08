@@ -85,7 +85,7 @@ declare interface CircleBase extends Base {
 }
 
 declare interface SquareBase extends Base {
-	energy_capacity: 800
+	energy_capacity: 1000
 
 	shape: "squares"
 }
