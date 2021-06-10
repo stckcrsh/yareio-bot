@@ -4,7 +4,9 @@ This is a template for creating bots for [yare.io](https://yare.io/), a programm
 
 ## Development
 
-First, you will need to install dependencies; to do that, install and run `yarn`.
+This template uses a Git submodule to store typings; you will need to clone the repo with `git clone --recurse-submodules`, or run `git submodule update --init` after cloning.
+
+You will need to install dependencies; to do that, install and run `yarn`.
 
 To build the bot, run `yarn build`. The result will be stored in `dist/bot.js`. Note that if there are any errors during linting or building, nothing is output (warnings don't prevent building).
 
