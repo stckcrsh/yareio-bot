@@ -1,10 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const fs = require("fs");
-const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-	entry: ['./src/index.ts'],
+	entry: './src/index.ts',
 	module: {
 		rules: [
 			{
@@ -23,14 +23,26 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist/')
 	},
 	devtool: false,
-	target: "node12.18",
+	target: "web",
 	plugins: [
 		new webpack.BannerPlugin({
 			banner: fs.readFileSync('./src/options.js').toString(),
 			raw: true
 		}),
-		new ESLintPlugin({
-			extensions: ['.tsx', '.ts', '.jsx', '.js']
+		new webpack.optimize.LimitChunkCountPlugin({
+			maxChunks: 1,
+		}),
+		new ForkTsCheckerWebpackPlugin({
+			typescript: {
+				diagnosticOptions: {
+					semantic: true,
+					syntactic: true,
+				},
+			},
+			eslint: {
+				enabled: true,
+				files: '.'
+			}
 		}),
 		new webpack.NoEmitOnErrorsPlugin()
 	],

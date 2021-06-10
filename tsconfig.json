@@ -5,6 +5,6 @@
 		"allowJs": true,
 		"moduleResolution": "node"
 	},
-	"extends": "@tsconfig/node12/tsconfig.json",
+	"extends": "@tsconfig/node14/tsconfig.json",
 	"typeRoots": ["./typings", "./node_modules/@types"]
 }
