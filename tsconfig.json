@@ -6,5 +6,5 @@
 		"moduleResolution": "node"
 	},
 	"extends": "@tsconfig/node14/tsconfig.json",
-	"typeRoots": ["./typings", "./node_modules/@types"]
+	"typeRoots": ["./typings", "./node_modules/@types", "./user-typings"]
 }

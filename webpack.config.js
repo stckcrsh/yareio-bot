@@ -40,7 +40,7 @@ module.exports = {
 				},
 			},
 			eslint: {
-				enabled: true,
+				enabled: false,
 				files: '.'
 			}
 		}),
